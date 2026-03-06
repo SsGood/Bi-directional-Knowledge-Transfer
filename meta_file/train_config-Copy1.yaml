@@ -1,0 +1,281 @@
+global:
+  layer_num: 2
+  hidden: 128
+  
+cora: 
+  GraphSAGE:
+    fan_out: 5,5
+    lr: 0.01
+    feat_drop: 0
+    weight_decay: 0.0005
+  
+  GCN:
+    hidden: 64
+    feat_drop: 0.5
+    weight_decay: 0.0005
+  
+  MLP:
+    lr: 0.01
+    weight_decay: 0.005
+    feat_drop: 0.6
+    
+  GAT:
+    feat_drop: 0.6
+    weight_decay: 0.01
+    attn_drop: 0.3
+
+  APPNP:
+    feat_drop: 0.5
+    weight_decay: 0.01
+    
+  FAGCN:
+    lr: 0.01
+    feat_drop: 0.6
+    weight_decay: 0.001
+    layer_num: 4
+    eps: 0.2
+  
+citeseer: 
+  GraphSAGE:
+    fan_out: 5,5
+    lr: 0.01
+    feat_drop: 0
+    weight_decay: 0.0005
+    
+  GCN:
+    hidden: 64
+    feat_drop: 0.5
+    weight_decay: 0.0005
+  
+  MLP:
+    lr: 0.01
+    weight_decay: 0.001
+    feat_drop: 0.1
+
+  GAT:
+    feat_drop: 0.6
+    weight_decay: 0.01
+    attn_drop: 0.3
+    
+  APPNP:
+    feat_drop: 0.5
+    weight_decay: 0.01
+    
+  FAGCN:
+    lr: 0.01
+    feat_drop: 0.6
+    weight_decay: 0.001
+    layer_num: 4
+    eps: 0.3
+
+pubmed:   
+  GraphSAGE:
+    fan_out: 5,5
+    lr: 0.01
+    feat_drop: 0
+    weight_decay: 0.0005
+    
+  GCN:
+    hidden: 64
+    feat_drop: 0.5
+    weight_decay: 0.0005
+  
+  MLP:
+    lr: 0.005
+    weight_decay: 0
+    feat_drop: 0.4
+
+  GAT:
+    feat_drop: 0.6
+    weight_decay: 0.01
+    attn_drop: 0.3
+    
+  APPNP:
+    feat_drop: 0.5
+    weight_decay: 0.01
+
+  FAGCN:
+    lr: 0.01
+    feat_drop: 0.6
+    weight_decay: 0.001
+    layer_num: 4
+    eps: 0.3
+    
+computers: 
+  GraphSAGE:
+    fan_out: 5,5
+    lr: 0.01
+    feat_drop: 0
+    weight_decay: 0.0005
+
+  GCN:
+    hidden: 64
+    feat_drop: 0.5
+    weight_decay: 0.001
+  
+  MLP:
+    lr: 0.001
+    weight_decay: 0.002
+    feat_drop: 0.3
+
+  GAT:
+    feat_drop: 0.6
+    weight_decay: 0.01
+    attn_drop: 0.3
+  
+  APPNP:
+    feat_drop: 0.5
+    weight_decay: 0.01
+    
+photo: 
+  GraphSAGE:
+    fan_out: 5,5
+    lr: 0.01
+    feat_drop: 0
+    weight_decay: 0.0005
+
+  GCN:
+    hidden: 64
+    feat_drop: 0.5
+    weight_decay: 0.001
+  
+  MLP:
+    lr: 0.005
+    weight_decay: 0.002
+    feat_drop: 0.3
+
+  GAT:
+    feat_drop: 0.6
+    weight_decay: 0.01
+    attn_drop: 0.3
+    
+  APPNP:
+    feat_drop: 0.5
+    weight_decay: 0.01
+    
+ogbn-arxiv:
+  MLP:  
+    layer_num: 3
+    hidden: 256
+    weight_decay: 0
+    feat_drop: 0.2
+    norm_type: batch
+
+  MLP3w4:
+    layer_num: 3
+    hidden: 1024
+    weight_decay: 0
+    feat_drop: 0.5
+    norm_type: batch
+    
+  GA1MLP:  
+    layer_num: 3
+    hidden: 256
+    weight_decay: 0
+    feat_drop: 0.2
+    norm_type: batch
+
+  GA1MLP3w4:
+    layer_num: 3
+    hidden: 1024
+    weight_decay: 0
+    feat_drop: 0.2
+    norm_type: batch
+    
+  GraphSAGE:  
+    layer_num: 3
+    hidden: 256
+    feat_drop: 0.2
+    lr: 0.01
+    weight_decay: 0
+    norm_type: batch
+    fan_out: 5,10,15
+  
+ogbn-products: 
+  MLP: 
+    layer_num: 3
+    hidden: 256
+    feat_drop: 0.5
+    norm_type: batch
+    batch_size: 4096
+
+  MLP3w8:
+    layer_num: 3
+    hidden: 2048
+    feat_drop: 0.2
+    lr: 0.01
+    weight_decay: 0
+    norm_type: batch
+    batch_size: 4096
+    
+  GraphSAGE:  
+    layer_num: 3
+    hidden: 256
+    feat_drop: 0.5
+    lr: 0.003
+    weight_decay: 0
+    norm_type: batch
+    fan_out: 5,10,15
+    batch_size: 4096
+
+pokec: 
+  GCN:  
+    layer_num: 2
+    hidden: 32
+    feat_drop: 0.5
+    lr: 0.01
+    weight_decay: 0
+    norm_type: batch
+    
+  MLP: 
+    layer_num: 3
+    hidden: 256
+    feat_drop: 0.2
+    lr: 0.001
+    norm_type: none
+
+  GraphSAGE:  
+    layer_num: 2
+    hidden: 32
+    feat_drop: 0.5
+    lr: 0.001
+    weight_decay: 0
+    norm_type: batch
+    fan_out: 5,5
+    
+penn94: 
+  GCN:  
+    layer_num: 2
+    hidden: 64
+    feat_drop: 0.5
+    lr: 0.01
+    weight_decay: 0.001
+    norm_type: batch
+  
+  MLP:
+    layer_num: 3
+    hidden: 256
+    feat_drop: 0
+    lr: 0.001
+    norm_type: none
+
+vk_class: 
+  MLP: 
+    layer_num: 3
+    hidden: 512
+    lr: 0.01
+    feat_drop: 0
+    weight_decay: 0
+    norm_type: batch
+    batch_size: 6754
+
+house_class: 
+  MLP: 
+    layer_num: 3
+    hidden: 512
+    lr: 0.01
+    feat_drop: 0
+    weight_decay: 0
+    norm_type: layer
+    batch_size: 2580
+    
