@@ -1,6 +1,4 @@
-以下是补充了 `run.py` 运行说明的完整 README 文件：
 
-```markdown
 # BiKT: Unleashing the Potential of GNNs via Bi-Directional Knowledge Transfer
 
 ![Python](https://img.shields.io/badge/Python-3.7%2B-blue)
