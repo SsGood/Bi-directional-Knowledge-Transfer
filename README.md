@@ -48,41 +48,10 @@ pip install numpy scipy scikit-learn
 
 ## Usage
 
-### Quick Start
-
-```python
-from bikt import BiKT
-import torch
-
-# Initialize the model
-model = BiKT(
-    num_features=128,
-    num_hidden=64,
-    num_classes=10,
-    num_layers=3
-)
-
-# Forward pass
-x = torch.randn(100, 128)  # Input features
-edge_index = torch.tensor([[0, 1, 1, 2], [1, 0, 2, 1]])  # Edge indices
-
-output = model(x, edge_index)
-print(output.shape)  # [100, 10]
-```
-
 ### Running Experiments
 
-To reproduce the results from the paper:
-
 ```bash
-# Train on citation networks
-python train.py --dataset cora --model bikt --epochs 200
-
-# Train on social networks
-python train.py --dataset reddit --model bikt --epochs 100
-
-# Train on heterogeneous graphs
-python train.py --dataset ogbn-arxiv --model bikt --epochs 50
+python run-fix.py --dataset {dataset} --net {GNN}
 ```
 
 ## Model Architecture
@@ -100,24 +69,13 @@ python train.py --dataset ogbn-arxiv --model bikt --epochs 50
 3. **Graph Neural Backbone**:
    - Supports various GNN architectures (GCN, GraphSAGE, GAT, etc.)
 
-## Datasets
-
-The code supports multiple benchmark datasets:
-
-- **Citation Networks**: Cora, Citeseer, Pubmed
-- **Social Networks**: Reddit, OGB-Products
-- **Scientific Networks**: OGB-ArXiv, OGB-Papers100M
-- **Custom datasets**: Support for custom graph data
 
 ## Results
 
 Our method achieves competitive or superior performance compared to strong baselines:
 
-| Dataset | BiKT | GCN | GraphSAGE | GAT |
-|---------|------|-----|-----------|-----|
-| Cora | **85.5%** | 83.3% | 84.1% | 84.6% |
-| Citeseer | **71.2%** | 70.3% | 71.0% | 70.8% |
-| Pubmed | **79.8%** | 78.5% | 78.9% | 79.2% |
+<img width="1246" height="932" alt="image" src="https://github.com/user-attachments/assets/16ce8b98-c364-4d12-8c1e-eeeebca88d61" />
+
 
 *Note: Results may vary slightly depending on the random seed and hyperparameters.*
 
@@ -125,48 +83,7 @@ Our method achieves competitive or superior performance compared to strong basel
 
 ### Hyperparameters
 
-Key hyperparameters can be configured in `config.yaml`:
-
-```yaml
-model:
-  num_layers: 3
-  hidden_dim: 64
-  dropout: 0.5
-  
-training:
-  lr: 0.01
-  weight_decay: 5e-4
-  epochs: 200
-  batch_size: 512
-  
-bi_transfer:
-  transfer_weight: 0.5
-  adaptive_weighting: true
-```
-
-## Project Structure
-
-```
-Bi-directional-Knowledge-Transfer/
-├── README.md
-├── requirements.txt
-├── config.yaml
-├── bikt/
-│   ├── __init__.py
-│   ├── model.py
-│   ├── layers.py
-│   └── utils.py
-├── data/
-│   ├── __init__.py
-│   └── loader.py
-├── train.py
-├── eval.py
-├── examples/
-│   ├── basic_usage.py
-│   └── reproduce_paper.py
-└── tests/
-    └── test_model.py
-```
+Key hyperparameters can be configured in `train-config.yaml` and `hyper_config.yaml`:
 
 ## Citation
 
@@ -175,32 +92,11 @@ If you use this code in your research, please cite our paper:
 ```bibtex
 @article{bikt2026,
   title={BiKT: Unleashing the Potential of GNNs via Bi-Directional Knowledge Transfer},
-  author={Your Name},
+  author={Zheng, Shuai and Liu, Zhizhe and Zhu, Zhenfeng and Zhang, Xingxing and Li, Jianxin and Zhao, Yao},
   journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},
   year={2026},
   volume={48},
-  pages={xxxx-xxxx}
+  pages={3304 - 3318}
 }
 ```
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Contact
-
-For questions or suggestions, please contact:
-- **Email**: contact@example.com
-- **GitHub Issues**: [GitHub Issues Page](https://github.com/SsGood/Bi-directional-Knowledge-Transfer/issues)
-
-## Acknowledgments
-
-We thank the authors of PyTorch and PyTorch Geometric for providing excellent libraries for deep learning on graphs.
-
----
-
 **Last Updated**: 2026-03-06
