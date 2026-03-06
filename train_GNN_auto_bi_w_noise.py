@@ -11,7 +11,7 @@ import torch.nn.functional as F
 import dgl
 from dgl import DGLGraph
 from utils import *
-from FAGCN import *
+from gnn import *
 from training_agent import *
 import copy
 
