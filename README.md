@@ -1,4 +1,6 @@
+以下是补充了 `run.py` 运行说明的完整 README 文件：
 
+```markdown
 # BiKT: Unleashing the Potential of GNNs via Bi-Directional Knowledge Transfer
 
 ![Python](https://img.shields.io/badge/Python-3.7%2B-blue)
@@ -45,6 +47,16 @@ pip install -r requirements.txt
 
 ## Usage
 
+### Running with Pre-searched Hyperparameters
+
+To evaluate the models using the optimal hyperparameters already discovered and saved in the configuration file, execute the `run.py` script. This script automatically loads the predefined configurations from `train_config.yaml` and executes the evaluation across multiple standard datasets.
+
+```bash
+python src_final/run.py --net {GNNs} --dataset {dataset}
+
+```
+
+
 ### Basic Model Training
 
 The core training pipeline is controlled by the primary execution script. You can initiate a single training task by specifying the target dataset and the foundational graph neural network architecture.
@@ -55,6 +67,8 @@ python src_final/train_GNN_auto_bi_w_noise.py --dataset cora --net GraphSAGE
 ```
 
 Supported datasets encompass citation networks, e-commerce purchase networks, and heterophilic graphs. Valid dataset arguments include `cora`, `citeseer`, `pubmed`, `computers`, `photo`, `arxiv`, and `chameleon`. Supported backbone architectures include `GCN`, `GraphSAGE`, `GAT`, `FAGCN`, `MixHop`, and `GCNII`.
+
+
 
 ### Customized Adversarial Training
 
@@ -159,3 +173,6 @@ If you use this code in your research, please cite our paper:
 
 **Last Updated**: 2026-03-06
 
+```
+
+```
