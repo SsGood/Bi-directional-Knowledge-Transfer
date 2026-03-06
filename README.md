@@ -1,6 +1,4 @@
-以下是加入emoji表情，并根据您预设的代码库说明风格（多用段落、直说重点、去除冗余括号和废话）优化后的完整README文件：
 
-```markdown
 # 🚀 BiKT: Unleashing the Potential of GNNs via Bi-Directional Knowledge Transfer
 
 ![Python](https://img.shields.io/badge/Python-3.7%2B-blue)
@@ -9,6 +7,8 @@
 ## 📖 Overview
 
 This repository contains the official implementation of BiKT. BiKT is a novel approach for Graph Neural Networks leveraging bi-directional knowledge transfer mechanisms to enhance model performance and generalization capabilities. The associated paper is titled "BiKT: Unleashing the Potential of GNNs via Bi-Directional Knowledge Transfer" and will appear in IEEE Transactions on Pattern Analysis and Machine Intelligence 2026.
+<img width="1742" height="756" alt="image" src="https://github.com/user-attachments/assets/5b73a91f-1f49-4184-bde5-f6c0775b5125" />
+
 
 ## ✨ Key Features
 
@@ -25,7 +25,6 @@ Clone the repository and install the required dependencies using the package man
 ```bash
 git clone [https://github.com/SsGood/Bi-directional-Knowledge-Transfer.git](https://github.com/SsGood/Bi-directional-Knowledge-Transfer.git)
 cd Bi-directional-Knowledge-Transfer
-pip install -r requirements.txt
 
 ```
 
@@ -116,6 +115,6 @@ If you use this code in your research, please cite our paper.
 
 **Last Updated**: 2026-03-06
 
-```
+
 
 ```
